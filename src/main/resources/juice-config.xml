@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <settings>
+        <!--抓取的线程数-->
+        <setting name="downLoadThreadNum" value="4"/>
+        <!--线程超时时间，大于HTML读取时间,单位秒-->
+        <setting name="threadTimeout" value="30"/>
+        <!--不指定页面编码时默认的编码类型-->
+        <setting name="defaultCharset" value="utf-8"/>
+        <!--下载的临时文件路径绝对路径-->
+        <setting name="tempFilePath" value="D:\\usr"/>
+        <!--连接超时时间,单位秒-->
+        <setting name="connectTimeout" value="10"/>
+        <!--读取超时时间,单位秒-->
+        <setting name="readTimeout" value="20"/>
+        <!--代理Host，仅在useProxy为true时生效-->
+        <setting name="proxyHostName" value=""/>
+        <!--代理端口，仅在useProxy为true时生效-->
+        <setting name="proxyPort" value=""/>
+    </settings>
+
+    <templates>
+        <template name="点点轻博客" url="http://23262641.diandian.com/" charset="utf-8" cronExpression="" useProxy="false">
+            <property name="url" selector=".post-main a" matcher=""/>
+            <property name="nextPage"
+                      rule="http://23262641.diandian.com/do/getList.ajax?_posts%5Blimit%5D=10&amp;_posts%5Boffset%5D={1-50}"
+                      span="1"/>
+            <property name="title" selector="#content h1" matcher=""/>
+            <property name="createTime" selector=".topic-doc,.color-green" matcher="" format="yyyy-MM-dd HH:mm:ss"/>
+            <property name="author" selector=".from a" matcher=""/>
+            <property name="source" selector="" matcher=""/>
+            <property name="content" selector=".topic-content p" matcher=""/>
+            <property name="image" selector=".fancybox img" matcher=""/>
+        </template>
+
+        <template name="新浪微博" url="http://23262641.diandian.com/" charset="utf-8" cronExpression="" useProxy="false">
+            <property name="url" selector=".post-main a" matcher=""/>
+            <property name="nextPage"
+                      rule="http://23262641.diandian.com/do/getList.ajax?_posts%5Blimit%5D=10&amp;_posts%5Boffset%5D={1-50}"
+                      span="1"/>
+            <property name="title" selector="#content h1" matcher=""/>
+            <property name="createTime" selector=".topic-doc,.color-green" matcher="" format="yyyy-MM-dd HH:mm:ss"/>
+            <property name="author" selector=".from a" matcher=""/>
+            <property name="source" selector="" matcher=""/>
+            <property name="content" selector=".topic-content p" matcher=""/>
+            <property name="image" selector=".fancybox img" matcher=""/>
+        </template>
+
+    </templates>
+</configuration>
