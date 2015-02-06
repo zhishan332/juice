@@ -33,8 +33,8 @@
             <property name="image" selector=".fancybox img" matcher=""/>
         </template>
 
-        <template name="test" url="http://23262641.diandian.com/" charset="utf-8" cronExpression="" useProxy="false">
-            <property name="url" selector=".post-main a" matcher=""/>
+        <template name="豆瓣-穷游天下" url="http://www.douban.com/group/qiong/?ref=sidebar" charset="utf-8" cronExpression="" useProxy="false">
+            <property name="url" selector=".title a" matcher=""/>
             <property name="nextPage"
                       rule="http://23262641.diandian.com/do/getList.ajax?_posts%5Blimit%5D=10&amp;_posts%5Boffset%5D={1-50}"
                       span="1"/>
@@ -43,7 +43,7 @@
             <property name="author" selector=".from a" matcher=""/>
             <property name="source" selector="" matcher=""/>
             <property name="content" selector=".topic-content p" matcher=""/>
-            <property name="image" selector=".fancybox img" matcher=""/>
+            <property name="image" selector=".topic-figure img" matcher=""/>
         </template>
 
     </templates>

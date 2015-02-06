@@ -28,6 +28,7 @@ public class TestRun {
         Juice juice = new Juice();
         List<Template> list = TemplateFactory.getInstance().getTemplateList();
         for (Template template : list) {
+            System.out.println("正在分析："+template.getTemplateName());
             ListPage web = juice.getListPage(template.getFirstUrl(), template, new JsoupHtmlParser(), 0);
             System.out.println("web:" + web);
             for (String url : web.getUrls()) {
